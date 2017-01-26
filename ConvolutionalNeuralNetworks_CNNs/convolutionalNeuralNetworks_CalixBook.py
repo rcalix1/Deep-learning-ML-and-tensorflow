@@ -4,8 +4,8 @@
 ## Getting started with deep learning: Programming and methodologies using Python 
 ## By Ricardo Calix
 ## and notes from tensorflow.org and sklearn.org
-## a deep neural net with 2 or 3 layers 
-##########################################################
+## simple example of a convolutional neural network for mnist data
+###################################################################
 
 import tensorflow as tf
 import numpy as np
