@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 ## Deep Learning code
 ## Ricardo A. Calix, PNW, 2016
-## Code put together from notes from the book
-## Fundamentals of deep learning (O'Reily)
-## Book author: Nikhil Buduma
+## Code put together from notes from:
+## Getting started with deep learning: Programming and methodologies using Python 
+## By Ricardo Calix
+## Fundamentals of deep learning (O'Reily) By N. Buduma
+## and notes from tensorflow.org and sklearn.org
 ## deep with 2 layers and mnist obtains 97% accuracy
 ##########################################################
 

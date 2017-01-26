@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 ## Ricardo A. Calix, PNW, 2016
-## Code put together from notes from the book
-## Fundamentals of deep learning (O'Reily)
-## Book author: Nikhil Buduma
+## Code put together from notes from:
+## Getting started with deep learning By Ricardo Calix
+## Programming and methodologies using Python 
+## Fundamentals of deep learning (O'Reily) By N. Buduma
+## and notes from tensorflow.org
 ##########################################################
 
 import tensorflow as tf
