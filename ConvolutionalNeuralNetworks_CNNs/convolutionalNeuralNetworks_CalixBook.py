@@ -227,7 +227,7 @@ y_p_metrics = tf.argmax(output, 1)
 ##################################################################
 # Initialize and run
 
-init = tf.global_variables_initializer() ## ??
+#init = tf.global_variables_initializer() 
 
 init = tf.initialize_all_variables()
 sess = tf.Session()
@@ -235,28 +235,32 @@ sess.run(init)
 
 
 ###########################################################################################
-
+dropout2 = 1.0
 
 step = 1
 # Keep training until reach max iterations
-while step * batch_size < training_iters:
+while step * batch_size < n_epochs:
     batch_x, batch_y = mnist.train.next_batch(batch_size)
     sess.run(train_op, feed_dict={x_tf: batch_x, y_tf: batch_y, keep_prob: dropout})
 
-    loss, acc = sess.run([cost, eval_op], feed_dict={x: batch_x,
-                                                     y: batch_y,
-                                                     keep_prob: 1.})
+    loss, acc = sess.run([cost, eval_op], feed_dict={x_tf: batch_x,
+                                                     y_tf: batch_y,
+                                                     keep_prob: dropout2})
     
 
-    # Calculate accuracy for 256 mnist test images
     result = sess.run(eval_op, feed_dict={x_tf: mnist.test.images[:256],
                                       y_tf: mnist.test.labels[:256],
-                                      keep_prob: 1.}))
+                                      keep_prob: dropout2})
+
     result2, y_result_metrics = sess.run([eval_op, y_p_metrics], feed_dict={x_tf: mnist.test.images[:256],
-                                                                            y_tf: mnist.test.labels[:256]})
-    print "test {},{}".format(step,result)
+                                                                            y_tf: mnist.test.labels[:256],
+                                                                            keep_prob: dropout2})
+
+
+
+    print "test1 {},{}".format(step,result)
         
-    print "test2 {},{}".format(step,result)
+    print "test2 {},{}".format(step,result2)
     y_true = np.argmax(mnist.test.labels[:256],1)
     print_stats_metrics(y_true, y_result_metrics)
     if step == 1000:
