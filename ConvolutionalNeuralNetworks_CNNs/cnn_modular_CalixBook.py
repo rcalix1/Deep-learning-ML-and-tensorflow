@@ -25,6 +25,9 @@ import matplotlib.pyplot as plt
 ###########################################################
 ## set parameters
 
+import warnings
+warnings.filterwarnings("ignore") 
+
 np.set_printoptions(threshold=np.inf) #print all values in numpy array
 
 ###########################################################
@@ -82,17 +85,17 @@ def print_stats_metrics(y_test, y_pred):
     print "confusion matrix"
     print(confmat)
     print pd.crosstab(y_test, y_pred, rownames=['True'], colnames=['Predicted'], margins=True)
-    precision_scores_list.append(precision_score(y_true=y_test, y_pred=y_pred))
-    print('Precision: %.3f' % precision_score(y_true=y_test, y_pred=y_pred))
-    print('Recall: %.3f' % recall_score(y_true=y_test, y_pred=y_pred))
-    print('F1-measure: %.3f' % f1_score(y_true=y_test, y_pred=y_pred))
+    #precision_scores_list.append(precision_score(y_true=y_test, y_pred=y_pred))
+    #print('Precision: %.3f' % precision_score(y_true=y_test, y_pred=y_pred))
+    #print('Recall: %.3f' % recall_score(y_true=y_test, y_pred=y_pred))
+    #print('F1-measure: %.3f' % f1_score(y_true=y_test, y_pred=y_pred))
 
 #####################################################################
 
 def plot_metric_per_epoch():
     x_epochs = []
     y_epochs = [] 
-    for i, val in enumerate(precision_scores_list):
+    for i, val in enumerate(accuracy_scores_list):
         x_epochs.append(i)
         y_epochs.append(val)
     
@@ -124,8 +127,8 @@ def maxpool2d(x, k=2):
 ################################################################
 
 def layer(input, weight_shape, bias_shape):
-    W = tf.get_variable(tf.random_normal(weight_shape))
-    b = tf.get_variable(tf.random_normal(bias_shape))
+    W = tf.Variable(tf.random_normal(weight_shape))
+    b = tf.Variable(tf.random_normal(bias_shape))
     mapping = tf.matmul(input, W)   
     result = tf.add( mapping ,  b )
     return result
@@ -134,9 +137,10 @@ def layer(input, weight_shape, bias_shape):
 ################################################################
 
 def conv_layer(input, weight_shape, bias_shape):
-    W = tf.get_variable(tf.random_normal(weight_shape))
-    b = tf.get_variable(tf.random_normal(bias_shape))
-    conv = conv2d(x, W, b)
+    ##rr =raw_input()
+    W = tf.Variable(tf.random_normal(weight_shape))
+    b = tf.Variable(tf.random_normal(bias_shape))
+    conv = conv2d(input, W, b)
     # Max Pooling (down-sampling)
     conv_max = maxpool2d(conv, k=2)
     return conv_max
@@ -146,8 +150,8 @@ def conv_layer(input, weight_shape, bias_shape):
 def fully_connected_layer(conv_input, fc_weight_shape, fc_bias_shape, dropout):   
     new_shape = [-1, tf.Variable(tf.random_normal(fc_weight_shape)).get_shape().as_list()[0]]
     fc = tf.reshape(conv_input, new_shape)
-    mapping = tf.matmul(fc, tf.Variable(tf.random_normal( fc_weight_shape))
-    fc = tf.add(mapping, tf.Variable(tf.random_normal(fc_bias_shape)))
+    mapping = tf.matmul(   fc, tf.Variable(tf.random_normal( fc_weight_shape))   )
+    fc = tf.add( mapping, tf.Variable(tf.random_normal(fc_bias_shape))    )
     fc = tf.nn.relu(fc)
     # Apply Dropout
     fc = tf.nn.dropout(fc, dropout)
@@ -164,22 +168,18 @@ def inference_conv_net2(x, dropout):
 
     # Convolution Layer 1, filter 5x5 conv, 1 input, 16 outputs
     # max pool will reduce image from 28*28 to 14*14
-    with tf.variable_scope("conv1"):
-        conv1 = conv_layer(x, [5, 5, 1, 16], [16] )
+    conv1 = conv_layer(x, [5, 5, 1, 16], [16] )
     
     # Convolution Layer 2, filter 5x5 conv, 16 inputs, 36 outputs
     # max pool will reduce image from 14*14 to 7*7
-    with tf.variable_scope("conv2"):
-        conv2 = conv_layer(conv1, [5, 5, 16, 36], [36] )
+    conv2 = conv_layer(conv1, [5, 5, 16, 36], [36] )
     
     # Fully connected layer, 7*7*36 inputs, 128 outputs
     # Reshape conv2 output to fit fully connected layer input
-    with tf.variable_scope("fc1"):
-        fc1 = fully_connected_layer(conv2, [7*7*36, 128], [128] , dropout)
+    fc1 = fully_connected_layer(conv2, [7*7*36, 1024], [1024] , dropout)
     
     # Output, 128 inputs, 10 outputs (class prediction)
-    with tf.variable_scope("output"):
-        output = layer(fc1 ,[128, n_classes], [n_classes] )
+    output = layer(fc1 ,[1024, n_classes], [n_classes] )
     return output
 
 
@@ -193,21 +193,17 @@ def inference_conv_net(x, dropout):
     x = tf.reshape(x, shape=[-1, 28, 28, 1])
 
     # Convolution Layer 1, 5x5 conv, 1 input, 32 outputs
-    with tf.variable_scope("conv1"):
-        conv1 = conv_layer(x, [5, 5, 1, 32], [32] )
+    conv1 = conv_layer(x, [5, 5, 1, 32], [32] )
     
     # Convolution Layer 2, 5x5 conv, 32 inputs, 64 outputs
-    with tf.variable_scope("conv2"):
-        conv2 = conv_layer(conv1, [5, 5, 32, 64], [64] )
+    conv2 = conv_layer(conv1, [5, 5, 32, 64], [64] )
     
     # Fully connected layer, 7*7*64 inputs, 1024 outputs
     # Reshape conv2 output to fit fully connected layer input
-    with tf.variable_scope("fc1"):
-        fc1 = fully_connected_layer(conv2, [7*7*64, 1024], [1024] , dropout)
+    fc1 = fully_connected_layer(conv2, [7*7*64, 1024], [1024] , dropout)
     
     # Output, 1024 inputs, 10 outputs (class prediction)
-    with tf.variable_scope("output"):
-        output = layer(fc1 ,[1024, n_classes], [n_classes] )
+    output = layer(fc1 ,[1024, n_classes], [n_classes] )
     return output
 
 
@@ -247,8 +243,8 @@ keep_prob = tf.placeholder(tf.float32) #dropout (keep probability)
 
 ###############################################################
          
-#output = inference_conv_net2(x_tf, keep_prob) 
-output = inference_conv_net(x_tf, keep_prob) 
+output = inference_conv_net2(x_tf, keep_prob) 
+#output = inference_conv_net(x_tf, keep_prob) 
 cost = loss_deep_conv_net(output, y_tf)
 
 train_op = training(cost) 
