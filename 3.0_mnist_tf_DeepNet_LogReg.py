@@ -3,7 +3,6 @@
 ## Ricardo A. Calix, PNW, 2016
 ## Getting started with deep learning: Programming and methodologies using Python 
 ## By Ricardo Calix
-## Fundamentals of deep learning (O'Reily) By N. Buduma
 ## and notes from tensorflow.org and sklearn.org
 ## a deep neural net with 2 or 3 layers 
 ##########################################################

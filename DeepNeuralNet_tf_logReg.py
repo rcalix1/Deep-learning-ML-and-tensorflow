@@ -3,7 +3,6 @@
 ## Code put together from notes from:
 ## Getting started with deep learning By Ricardo Calix
 ## Programming and methodologies using Python 
-## Fundamentals of deep learning (O'Reily) By N. Buduma
 ## and notes from tensorflow.org
 ##########################################################
 
