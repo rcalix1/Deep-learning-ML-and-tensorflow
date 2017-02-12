@@ -42,8 +42,8 @@ n_epochs = 100000  ##27000
 batch_size = 100
 
 
-#to predict the class per 28x28 image, we know think of the image
-#as a sequence of rows. Therfore, you have 28 rows of 28 pixels
+#to predict the class per 28x28 image, we now think of the image
+#as a sequence of rows. Therefore, you have 28 rows of 28 pixels
 #each
 
 chunk_size = 28 # MNIST data input (img shape: 28*28)
