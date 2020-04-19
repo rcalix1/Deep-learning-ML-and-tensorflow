@@ -1,6 +1,6 @@
 word2vec
 We will use the covid-19 research paper data set ( about 10,000 full articles
-and 40,000 abstracts 
+and 40,000 abstracts )
 
 download zip file from:
 http://www.ricardocalix.com/teaching/DeepLearning2020/materials/pdf_json.zip
