@@ -13,7 +13,8 @@ after code finishes, run on terminal:
 this gives you a port number for tensorboard
 then
 go to a browser an type localhost and the port number
-like so
+like so:
+
 on browser url box type:
 localhost:6006
 
