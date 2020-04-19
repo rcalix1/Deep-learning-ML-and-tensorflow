@@ -1,13 +1,20 @@
 word2vec
-download zip file from:
+We will use the covid-19 research paper data set ( about 10,000 full articles
+and 40,000 abstracts 
 
+download zip file from:
 http://www.ricardocalix.com/teaching/DeepLearning2020/materials/pdf_json.zip
-run code
+
+run python code file attached in this github folder
+
 after code finishes, run on terminal:
 >> tensorboard --logdir logs/
+
 this gives you a port number for tensorboard
 then
 go to a browser an type localhost and the port number
 like so
 on browser url box type:
 localhost:6006
+
+in the tensorboard site select projector from the upper right hand corner dropdown 
