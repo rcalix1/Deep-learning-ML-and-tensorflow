@@ -1,0 +1,3 @@
+Deep Q AP
+This is the stabilization module only (e.g. the don't crash while flying straight and level module)
+It includes: the environment file, the sim file, the Q file
