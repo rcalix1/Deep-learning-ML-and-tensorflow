@@ -1,1 +1,0 @@
-Deep Q AP version 1.0 (stabilization module only)
