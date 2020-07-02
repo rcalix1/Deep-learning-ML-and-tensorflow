@@ -28,8 +28,5 @@ Ricardo A. Calix, Ph.D.
 ### Notices
 Released as is with no warranty
 
-#### xpc API
-Copyright (c) 2008, Sandy Barbour and Ben Supnik  All rights reserved.
-
 #### Deep Q AP
 Copyright (c) 2020, Ricardo A. Calix All rights reserved.
