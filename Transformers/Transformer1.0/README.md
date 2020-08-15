@@ -1,4 +1,4 @@
-## Transformer
+## Transformer (English-to-Portuguese)
 
 Transformer on Tensorflow low level API with a statitc graph based on paper "Attention Is All You Need".
 
