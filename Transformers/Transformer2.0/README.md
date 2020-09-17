@@ -9,3 +9,7 @@ https://www.statmt.org/europarl/
 Paper: Europarl: A Parallel Corpus for Statistical Machine Translation, Philipp Koehn, MT Summit 2005
 
 The train set has about 1,965,734 english spanish pairs. I did a 90/10 percent split. 
+
+Download Data: http://www.rcalix.com/research/transformers/spanish/
+
+
