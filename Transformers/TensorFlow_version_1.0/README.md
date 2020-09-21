@@ -1,4 +1,4 @@
-## Transformer (English-to-Portuguese)
+## Transformer
 
 For an updated version in Tensorflow 2.0 see OTHER folder in this REPO. 
 
