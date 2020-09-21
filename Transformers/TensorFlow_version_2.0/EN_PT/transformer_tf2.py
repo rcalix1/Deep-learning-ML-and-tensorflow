@@ -875,7 +875,7 @@ print ("Real translation: so i 'll just share with you some stories very quickly
 
 ###################################################################################################
 
-translate("este é o primeiro livro que eu fiz.", plot='decoder_layer4_block2')
+translate("este é o primeiro livro que eu fiz.")
 print ("Real translation: this is the first book i've ever done.")
 
 
