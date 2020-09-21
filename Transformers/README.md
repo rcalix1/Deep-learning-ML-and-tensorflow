@@ -6,4 +6,4 @@ The implementations are done using:
 
 * Tensorflow 2.0 high level API (more efficient version)
 
-* Tensorflow low level API with a static graph (Version is around Tensorflow 1.10)
+* Tensorflow 1.0 low level API with a static graph (Version is around Tensorflow 1.10)
