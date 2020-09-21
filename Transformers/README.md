@@ -4,6 +4,6 @@ This folder contains several examples of transformers. The examples are for engl
 
 The implementations are done using:
 
-* Tensorflow 2.0 high level
+* Tensorflow 2.0 high level API (more efficient version)
 
 * Tensorflow low level API with a static graph (Version is around Tensorflow 1.10)
