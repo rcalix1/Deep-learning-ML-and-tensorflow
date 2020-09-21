@@ -1,6 +1,6 @@
 ## Transformer (English-to-Spanish)
 
-Transformer on Tensorflow low level API with a statitc graph based on paper "Attention Is All You Need".
+Transformer on Tensorflow low level API with a static graph based on paper "Attention Is All You Need".
 
 This transformer is for english-to-spanish translation. The dataset used is Europarl which can be found here:
 
