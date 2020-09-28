@@ -14,14 +14,14 @@ The train set has about 1,965,734 english spanish pairs. After removing sentence
 
 
 Parameters: 
-batch size    256
-dff           1024
-d_model       256
-heads         8
+* batch size    256
+* dff           1024
+* d_model       256
+* heads         8
 
 It trained for about 12 hours. Each batch of 256 pairs took about ~22 seconds
 
-
+Examples of predicted spanish sentences: link
 
 #### Quick Start
 To get started do the following:
