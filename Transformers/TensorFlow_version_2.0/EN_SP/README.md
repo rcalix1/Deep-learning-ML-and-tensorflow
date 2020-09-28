@@ -21,7 +21,7 @@ Parameters:
 
 It trained for about 12 hours. Each batch of 256 pairs took about ~22 seconds
 
-Examples of predicted spanish sentences: link
+Examples of predicted spanish sentences: http://www.rcalix.com/research/transformers/spanish/pred_sept_2020/
 
 #### Quick Start
 To get started do the following:
