@@ -10,7 +10,7 @@ Python
 To get started do the following:
 
 1. Install X-Plane 11
-2. Install xpc from (https://github.com/nasa/XPlaneConnect)
+2. Install XPlaneConnect from (https://github.com/nasa/XPlaneConnect)
 * Note: You only need to Download the XPlaneConnect.zip file from the latest release on the releases page (https://github.com/nasa/XPlaneConnect/releases), unzip it, and copy it to the plugin directory ([X-Plane Directory]/Resources/plugins/). Try the latest release and work your way back until you find one that works. It will show in the xplane menu under plugins. 
 3. Use the code files provided here
 
