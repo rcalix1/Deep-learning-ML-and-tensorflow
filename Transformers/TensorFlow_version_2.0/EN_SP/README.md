@@ -24,11 +24,9 @@ It trained for about 12 hours. Each batch of 256 pairs took about ~22 seconds
 Examples of predicted spanish sentences: http://www.rcalix.com/research/transformers/spanish/pred_sept_2020/
 
 
-BLEU scores average for all translations (31,238)
-33.80289964719076
+BLEU scores average for all translations (31,238) is equal to 33.80289964719076
 
-BLEU scores average for all translations where real spanish sent <= 40 tokens and no english sents equal to nothing (26,066)
-36.72440067781728
+BLEU scores average for all translations where real spanish sent <= 40 tokens and no english sents equal to nothing (26,066) is equal to 36.72440067781728
 
 
 
