@@ -23,12 +23,19 @@ It trained for about 12 hours. Each batch of 256 pairs took about ~22 seconds
 
 Examples of predicted spanish sentences: http://www.rcalix.com/research/transformers/spanish/pred_sept_2020/
 
+#### BLEU scores
 
 BLEU scores average for all translations (31,238) is equal to 33.80289964719076
 
 BLEU scores average for all translations where real spanish sent <= 40 tokens and no english sents equal to nothing (26,066) is equal to 36.72440067781728
 
+Length stats of predicted sentences:
+* max  41
+* min  2
+* avg  25.415135411998207
+* median  25.0
 
+The Transformer seems to learn an optimal predicted sentence size and it seems predisposed to predict sentences to a certain lenght. Using 25 as the sentence cutoff given that, in general, it usually stops before reaching 40, the AVG BLEU score for sentences <= 25 (17654) is equal to 39.79823744044289
 
 #### Quick Start
 To get started do the following:
