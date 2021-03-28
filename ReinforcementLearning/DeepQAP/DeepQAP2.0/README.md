@@ -1,7 +1,7 @@
 # Deep Q AP 2.0
 Deep Q AP 2.0 (Deep Q Auto Pilot) is an implementation of DQN learning for automated flight using x-plane 11 and xpc.
 This version (2.0) provides the basic pipeline for the environment and 1 module for aircraft in flight stabilization. 
-Basic DQN (Deep Q Network) learning functionality is also provided.
+Basic DQN (Deep Q Network) learning functionality is also provided. Reference DQN here (https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
 
 ### Architecture
 Python 
